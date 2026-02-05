@@ -402,7 +402,7 @@ namespace myredis
         if (level > _level)
         {
             // 如果插入节点的层数比原跳表的层数还要高,那么更新跳表的最高层数
-            for (int i = level; i < _level; i++)
+            for (int i = _level; i < level; i++)
                 update[static_cast<size_t>(i)] = _head; // 将高于_level层的所有层的update数组全部填充_head指针
             _level = level;
         }
